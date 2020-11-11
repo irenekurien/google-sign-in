@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "202366082857",
+    "firebase_url": "https://authentication-app-00.firebaseio.com",
+    "project_id": "authentication-app-00",
+    "storage_bucket": "authentication-app-00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202366082857:android:8419859d751e79d3d42138",
+        "android_client_info": {
+          "package_name": "com.irene.auth_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202366082857-vt04as2mdc83anq939idml3p8h492leo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.irene.auth_app",
+            "certificate_hash": "0fa119f51fbe80297c71c9d00fd8ed03f324ecf5"
+          }
+        },
+        {
+          "client_id": "202366082857-8q5cum5bpe3ipou9r24a71erlm3o53d4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqFb8GEyHTRNAJwKEXGPRTyBS1BN2VuWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202366082857-8q5cum5bpe3ipou9r24a71erlm3o53d4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
