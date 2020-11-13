@@ -80,7 +80,7 @@ class _LoginFormState extends State<LoginForm> {
         }
         if (state.isSuccess) {
           BlocProvider.of<AuthenticationBloc>(context)
-              .dispatch(AuthenticationUserChanged(this.user));
+              .dispatch(changedUser: AuthenticationUserChanged(this.user));
         }
       },
       child: BlocBuilder<LoginBloc, LoginState>(
@@ -165,7 +165,7 @@ class _LoginFormState extends State<LoginForm> {
 
   void _onFormSubmitted() {
     _loginBloc.dispatch(
-      LoginWithCredentialsPressed(
+      loginWithCredentialsPressed: LoginWithCredentialsPressed(
         email: _emailController.text,
         password: _passwordController.text,
       ),

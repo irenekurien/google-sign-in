@@ -59,5 +59,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   void dispose() {}
 
-  void dispatch(LoginWithCredentialsPressed loginWithCredentialsPressed) {}
+  void dispatch(
+      {LoginWithCredentialsPressed loginWithCredentialsPressed,
+      LoginWithGooglePressed loginWithGooglePressed}) {}
 }

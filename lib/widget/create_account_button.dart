@@ -19,11 +19,11 @@ class CreateAccountButton extends StatelessWidget {
         'Create an Account',
       ),
       onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) {
-            return RegistrationScreen(authRepository: _authRepository);
-          }),
-        );
+        // Navigator.of(context).push(
+        //   MaterialPageRoute(builder: (context) {
+        //     return RegistrationScreen(authRepository: _authRepository);
+        //   }),
+        // );
       },
     );
   }

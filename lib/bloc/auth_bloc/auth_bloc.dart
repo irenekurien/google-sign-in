@@ -51,5 +51,8 @@ class AuthenticationBloc
 
   void dispose() {}
 
-  void dispatch(loggedOut) {}
+  void dispatch({
+    loggedOut,
+    changedUser,
+  }) {}
 }
