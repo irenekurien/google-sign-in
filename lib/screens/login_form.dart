@@ -7,6 +7,9 @@ import 'package:auth_app/widget/google_login_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../widget/create_account_button.dart';
+import '../widget/rounded_button.dart';
+
 class LoginForm extends StatefulWidget {
   final AuthenticationRepository _authenticationRepository;
 
@@ -124,10 +127,12 @@ class _LoginFormState extends State<LoginForm> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        LoginButton(
+                        RoundedButton(
                           onPressed: isLoginButtonEnabled(state)
                               ? _onFormSubmitted
                               : null,
+                          colour: Colors.blue,
+                          title: "LOGIN",
                         ),
                         SizedBox(
                           height: 8.0,
@@ -137,8 +142,8 @@ class _LoginFormState extends State<LoginForm> {
                           height: 8.0,
                         ),
                         CreateAccountButton(
-                            authenticationRepository:
-                                _authenticationRepository),
+                          authRepository: _authenticationRepository,
+                        ),
                       ],
                     ),
                   ),

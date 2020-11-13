@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 class CreateAccountButton extends StatelessWidget {
   final AuthenticationRepository _authRepository;
 
-  CreateAccountButton(
-      {Key key, @required AuthenticationRepository authRepository})
-      : assert(authRepository != null),
+  CreateAccountButton({
+    Key key,
+    @required AuthenticationRepository authRepository,
+  })  : assert(authRepository != null),
         _authRepository = authRepository,
         super(key: key);
 
