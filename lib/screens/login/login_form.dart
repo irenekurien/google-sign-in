@@ -7,8 +7,8 @@ import 'package:auth_app/widget/google_login_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../widget/create_account_button.dart';
-import '../widget/rounded_button.dart';
+import '../../widget/create_account_button.dart';
+import '../../widget/rounded_button.dart';
 
 class LoginForm extends StatefulWidget {
   final AuthenticationRepository _authenticationRepository;
@@ -80,7 +80,7 @@ class _LoginFormState extends State<LoginForm> {
         }
         if (state.isSuccess) {
           BlocProvider.of<AuthenticationBloc>(context)
-              .dispatch(changedUser: AuthenticationLogIn(this.user));
+              .dispatch(loggedIn: AuthenticationLogIn(this.user));
         }
       },
       child: BlocBuilder<LoginBloc, LoginState>(

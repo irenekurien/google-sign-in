@@ -1,5 +1,5 @@
 import 'package:auth_app/repositories/auth_repository.dart';
-import 'package:auth_app/screens/registration_screen.dart';
+import 'package:auth_app/screens/regiateration/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountButton extends StatelessWidget {
@@ -19,11 +19,11 @@ class CreateAccountButton extends StatelessWidget {
         'Create an Account',
       ),
       onPressed: () {
-        // Navigator.of(context).push(
-        //   MaterialPageRoute(builder: (context) {
-        //     return RegistrationScreen(authRepository: _authRepository);
-        //   }),
-        // );
+        Navigator.of(context).push(
+          MaterialPageRoute(builder: (context) {
+            return RegisterScreen(authRepository: _authRepository);
+          }),
+        );
       },
     );
   }

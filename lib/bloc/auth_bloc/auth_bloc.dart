@@ -53,6 +53,6 @@ class AuthenticationBloc
 
   void dispatch({
     loggedOut,
-    changedUser,
+    loggedIn,
   }) {}
 }

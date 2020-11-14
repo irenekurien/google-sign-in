@@ -36,10 +36,6 @@ class AuthenticationRepository {
     return currentUser != null;
   }
 
-  Future<String> getUser() async {
-    return (_firebaseAuth.currentUser).email;
-  }
-
   /// Creates a new user with the provided [email] and [password].
   /// Throws a [SignUpFailure] if an exception occurs.
   Future<void> signUp({

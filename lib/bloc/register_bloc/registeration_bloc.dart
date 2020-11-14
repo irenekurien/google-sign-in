@@ -59,4 +59,12 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       yield RegisterState.failure();
     }
   }
+
+  void dispose() {}
+
+  void dispatch({
+    EmailChanged emailChanged,
+    PasswordChanged passwordChanged,
+    Submitted submitted,
+  }) {}
 }

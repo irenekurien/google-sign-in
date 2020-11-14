@@ -12,9 +12,9 @@ import 'bloc/auth_bloc/auth_bloc.dart';
 import 'repositories/auth_repository.dart';
 import 'repositories/auth_repository.dart';
 import 'screens/home_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/login_screen.dart';
-import 'screens/login_screen.dart';
+import 'screens/login/login_screen.dart';
+import 'screens/login/login_screen.dart';
+import 'screens/login/login_screen.dart';
 
 main() {
   runApp(App());
