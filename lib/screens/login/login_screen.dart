@@ -1,5 +1,6 @@
 import 'package:auth_app/bloc/login_bloc/login_bloc.dart';
 import 'package:auth_app/repositories/auth_repository.dart';
+import 'package:auth_app/screens/login/login_form.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -33,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(title: Text('Login')),
       body: BlocProvider<LoginBloc>(
         create: (BuildContext context) => _loginBloc,
+        child: LoginForm(authenticationRepository: _authRepository),
       ),
     );
   }

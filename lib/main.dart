@@ -5,8 +5,11 @@ import 'bloc/auth_bloc/auth_bloc.dart';
 import 'repositories/auth_repository.dart';
 import 'screens/home_screen.dart';
 import 'screens/login/login_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-main() {
+main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(App());
 }
 
@@ -33,8 +36,8 @@ class _AppState extends State<App> {
           builder: (context, state) {
             switch (state.status) {
               case AuthenticationStatus.uninitiliazed:
-                return LoginScreen(
-                  authRepository: _authRepository,
+                return Scaffold(
+                  backgroundColor: Colors.red,
                 );
                 break;
               case AuthenticationStatus.unauthenticated:
