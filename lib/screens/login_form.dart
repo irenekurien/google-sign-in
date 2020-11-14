@@ -80,7 +80,7 @@ class _LoginFormState extends State<LoginForm> {
         }
         if (state.isSuccess) {
           BlocProvider.of<AuthenticationBloc>(context)
-              .dispatch(changedUser: AuthenticationUserChanged(this.user));
+              .dispatch(changedUser: AuthenticationLogIn(this.user));
         }
       },
       child: BlocBuilder<LoginBloc, LoginState>(

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auth_app/models/validators.dart';
 import 'package:auth_app/repositories/auth_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
@@ -22,7 +23,11 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
-    if (event is LoginWithGooglePressed) {
+    if (event is EmailChanged) {
+      yield* _mapEmailChangedToState(event.email);
+    } else if (event is PasswordChanged) {
+      yield* _mapPasswordChangedToState(event.password);
+    } else if (event is LoginWithGooglePressed) {
       yield* _mapLoginWithGooglePressedToState();
     } else if (event is LoginWithCredentialsPressed) {
       yield* _mapLoginWithCredentialsPressedToState(
@@ -30,6 +35,18 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         password: event.password,
       );
     }
+  }
+
+  Stream<LoginState> _mapEmailChangedToState(String email) async* {
+    yield state.update(
+      isEmailValid: Validators.isValidEmail(email),
+    );
+  }
+
+  Stream<LoginState> _mapPasswordChangedToState(String password) async* {
+    yield state.update(
+      isPasswordValid: Validators.isValidPassword(password),
+    );
   }
 
   Stream<LoginState> _mapLoginWithGooglePressedToState() async* {

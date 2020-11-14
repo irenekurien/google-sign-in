@@ -31,6 +31,15 @@ class AuthenticationRepository {
     });
   }
 
+  Future<bool> isSignedIn() async {
+    var currentUser = user;
+    return currentUser != null;
+  }
+
+  Future<String> getUser() async {
+    return (_firebaseAuth.currentUser).email;
+  }
+
   /// Creates a new user with the provided [email] and [password].
   /// Throws a [SignUpFailure] if an exception occurs.
   Future<void> signUp({
@@ -98,6 +107,10 @@ class AuthenticationRepository {
 
 extension on firebase_auth.User {
   User get toUser {
-    return User(id: uid, email: email, name: displayName, photo: photoURL);
+    return User(
+      id: uid,
+      email: email,
+      name: displayName,
+    );
   }
 }
