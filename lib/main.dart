@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-
 import 'package:auth_app/repositories/auth_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'bloc/auth_bloc/auth_bloc.dart';
-import 'bloc/auth_bloc/auth_bloc.dart';
-import 'bloc/auth_bloc/auth_bloc.dart';
-import 'bloc/auth_bloc/auth_bloc.dart';
-import 'bloc/auth_bloc/auth_bloc.dart';
-import 'repositories/auth_repository.dart';
 import 'repositories/auth_repository.dart';
 import 'screens/home_screen.dart';
-import 'screens/login/login_screen.dart';
-import 'screens/login/login_screen.dart';
 import 'screens/login/login_screen.dart';
 
 main() {
@@ -33,7 +23,6 @@ class _AppState extends State<App> {
     super.initState();
     _authenticationBloc =
         AuthenticationBloc(authenticationRepository: _authRepository);
-    _authenticationBloc.dispatch(changedUser: AuthenticationUserChanged);
   }
 
   @override
