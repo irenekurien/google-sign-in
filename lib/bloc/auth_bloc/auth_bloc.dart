@@ -28,7 +28,9 @@ class AuthenticationBloc
   Stream<AuthenticationState> mapEventToState(
     AuthenticationEvent event,
   ) async* {
-    if (event is AuthenticationLogIn) {
+    if (event is AppStarted) {
+      yield* _mapAppStartedToState();
+    } else if (event is AuthenticationLogIn) {
       yield _mapAuthenticationLogInToState(event);
     } else if (event is AuthenticationLogoutRequested) {
       _authenticationRepository.logOut();
@@ -39,6 +41,20 @@ class AuthenticationBloc
   Future<void> close() {
     _userSubscription?.cancel();
     return super.close();
+  }
+
+  Stream<AuthenticationState> _mapAppStartedToState() async* {
+    try {
+      final isSignedIn = await _authenticationRepository.isSignedIn();
+      if (isSignedIn) {
+        AuthenticationLogIn event;
+        yield AuthenticationState.authenticated(event.user);
+      } else {
+        yield AuthenticationState.unauthenticated();
+      }
+    } catch (_) {
+      yield AuthenticationState.unauthenticated();
+    }
   }
 
   AuthenticationState _mapAuthenticationLogInToState(
